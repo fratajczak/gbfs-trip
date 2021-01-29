@@ -1,5 +1,18 @@
 [
     {
+        "started_at": "2021-01-29 19:06:03+00:00",
+        "ended_at": "2021-01-29 20:34:30+00:00",
+        "duration": 5307,
+        "start_station_id": 0,
+        "start_station_name": "Flex parking",
+        "start_station_latitude": 52.485791111111,
+        "start_station_longitude": 13.434968888889,
+        "end_station_id": 0,
+        "end_station_name": "Flex parking",
+        "end_station_latitude": 52.485293333333,
+        "end_station_longitude": 13.428682222222
+    },
+    {
         "started_at": "2021-01-29 19:09:07+00:00",
         "ended_at": "2021-01-29 19:16:13+00:00",
         "duration": 426,
@@ -39,6 +52,32 @@
         "end_station_longitude": 13.41908
     },
     {
+        "started_at": "2021-01-29 19:18:15+00:00",
+        "ended_at": "2021-01-29 19:45:42+00:00",
+        "duration": 1647,
+        "start_station_id": 0,
+        "start_station_name": "Flex parking",
+        "start_station_latitude": 52.520582222222,
+        "start_station_longitude": 13.445821111111,
+        "end_station_id": 0,
+        "end_station_name": "Flex parking",
+        "end_station_latitude": 52.476137777778,
+        "end_station_longitude": 13.45094
+    },
+    {
+        "started_at": "2021-01-29 19:29:26+00:00",
+        "ended_at": "2021-01-29 19:47:44+00:00",
+        "duration": 1098,
+        "start_station_id": 0,
+        "start_station_name": "Flex parking",
+        "start_station_latitude": 52.517586666667,
+        "start_station_longitude": 13.463983333333,
+        "end_station_id": 0,
+        "end_station_name": "Flex parking",
+        "end_station_latitude": 52.510368888889,
+        "end_station_longitude": 13.451837777778
+    },
+    {
         "started_at": "2021-01-29 19:30:27+00:00",
         "ended_at": "2021-01-29 19:38:35+00:00",
         "duration": 488,
@@ -65,17 +104,17 @@
         "end_station_longitude": 13.438018888889
     },
     {
-        "started_at": "2021-01-29 19:18:15+00:00",
-        "ended_at": "2021-01-29 19:45:42+00:00",
-        "duration": 1647,
+        "started_at": "2021-01-29 19:36:33+00:00",
+        "ended_at": "2021-01-29 20:21:17+00:00",
+        "duration": 2684,
         "start_station_id": 0,
         "start_station_name": "Flex parking",
-        "start_station_latitude": 52.520582222222,
-        "start_station_longitude": 13.445821111111,
+        "start_station_latitude": 52.479542222222,
+        "start_station_longitude": 13.337144444444,
         "end_station_id": 0,
         "end_station_name": "Flex parking",
-        "end_station_latitude": 52.476137777778,
-        "end_station_longitude": 13.45094
+        "end_station_latitude": 52.482071111111,
+        "end_station_longitude": 13.433446666667
     },
     {
         "started_at": "2021-01-29 19:38:35+00:00",
@@ -89,19 +128,6 @@
         "end_station_name": "Flex parking",
         "end_station_latitude": 52.524586666667,
         "end_station_longitude": 13.346834444444
-    },
-    {
-        "started_at": "2021-01-29 19:29:26+00:00",
-        "ended_at": "2021-01-29 19:47:44+00:00",
-        "duration": 1098,
-        "start_station_id": 0,
-        "start_station_name": "Flex parking",
-        "start_station_latitude": 52.517586666667,
-        "start_station_longitude": 13.463983333333,
-        "end_station_id": 0,
-        "end_station_name": "Flex parking",
-        "end_station_latitude": 52.510368888889,
-        "end_station_longitude": 13.451837777778
     },
     {
         "started_at": "2021-01-29 19:39:36+00:00",
@@ -130,30 +156,17 @@
         "end_station_longitude": 13.429355555556
     },
     {
-        "started_at": "2021-01-29 19:36:33+00:00",
-        "ended_at": "2021-01-29 20:21:17+00:00",
-        "duration": 2684,
+        "started_at": "2021-01-29 20:13:09+00:00",
+        "ended_at": "2021-01-29 20:36:32+00:00",
+        "duration": 1403,
         "start_station_id": 0,
         "start_station_name": "Flex parking",
-        "start_station_latitude": 52.479542222222,
-        "start_station_longitude": 13.337144444444,
+        "start_station_latitude": 52.509146666667,
+        "start_station_longitude": 13.374895555556,
         "end_station_id": 0,
         "end_station_name": "Flex parking",
-        "end_station_latitude": 52.482071111111,
-        "end_station_longitude": 13.433446666667
-    },
-    {
-        "started_at": "2021-01-29 20:21:17+00:00",
-        "ended_at": "2021-01-29 20:29:25+00:00",
-        "duration": 488,
-        "start_station_id": 0,
-        "start_station_name": "Flex parking",
-        "start_station_latitude": 52.50904,
-        "start_station_longitude": 13.451295555556,
-        "end_station_id": 0,
-        "end_station_name": "Flex parking",
-        "end_station_latitude": 52.498248888889,
-        "end_station_longitude": 13.442045555556
+        "end_station_latitude": 52.536342222222,
+        "end_station_longitude": 13.397615555556
     },
     {
         "started_at": "2021-01-29 20:17:13+00:00",
@@ -169,43 +182,17 @@
         "end_station_longitude": 13.415735555556
     },
     {
-        "started_at": "2021-01-29 19:06:03+00:00",
-        "ended_at": "2021-01-29 20:34:30+00:00",
-        "duration": 5307,
+        "started_at": "2021-01-29 20:21:17+00:00",
+        "ended_at": "2021-01-29 20:29:25+00:00",
+        "duration": 488,
         "start_station_id": 0,
         "start_station_name": "Flex parking",
-        "start_station_latitude": 52.485791111111,
-        "start_station_longitude": 13.434968888889,
+        "start_station_latitude": 52.50904,
+        "start_station_longitude": 13.451295555556,
         "end_station_id": 0,
         "end_station_name": "Flex parking",
-        "end_station_latitude": 52.485293333333,
-        "end_station_longitude": 13.428682222222
-    },
-    {
-        "started_at": "2021-01-29 20:13:09+00:00",
-        "ended_at": "2021-01-29 20:36:32+00:00",
-        "duration": 1403,
-        "start_station_id": 0,
-        "start_station_name": "Flex parking",
-        "start_station_latitude": 52.509146666667,
-        "start_station_longitude": 13.374895555556,
-        "end_station_id": 0,
-        "end_station_name": "Flex parking",
-        "end_station_latitude": 52.536342222222,
-        "end_station_longitude": 13.397615555556
-    },
-    {
-        "started_at": "2021-01-29 20:38:34+00:00",
-        "ended_at": "2021-01-29 20:41:37+00:00",
-        "duration": 183,
-        "start_station_id": 0,
-        "start_station_name": "Flex parking",
-        "start_station_latitude": 52.491577777778,
-        "start_station_longitude": 13.435705555556,
-        "end_station_id": 0,
-        "end_station_name": "Flex parking",
-        "end_station_latitude": 52.496648888889,
-        "end_station_longitude": 13.440488888889
+        "end_station_latitude": 52.498248888889,
+        "end_station_longitude": 13.442045555556
     },
     {
         "started_at": "2021-01-29 20:26:22+00:00",
@@ -232,5 +219,18 @@
         "end_station_name": "Flex parking",
         "end_station_latitude": 52.489031111111,
         "end_station_longitude": 13.42192
+    },
+    {
+        "started_at": "2021-01-29 20:38:34+00:00",
+        "ended_at": "2021-01-29 20:41:37+00:00",
+        "duration": 183,
+        "start_station_id": 0,
+        "start_station_name": "Flex parking",
+        "start_station_latitude": 52.491577777778,
+        "start_station_longitude": 13.435705555556,
+        "end_station_id": 0,
+        "end_station_name": "Flex parking",
+        "end_station_latitude": 52.496648888889,
+        "end_station_longitude": 13.440488888889
     }
 ]

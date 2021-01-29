@@ -183,5 +183,6 @@ if __name__ == "__main__":
             # wait 1 second in case of update delays or timesync issues
             time.sleep(1)
     except KeyboardInterrupt:
+        berlin_bikes.trips.sort(key=lambda k: k['started_at'])
         with open("data.json", "w", encoding="utf-8") as f:
             json.dump(berlin_bikes.trips, f, ensure_ascii=False, indent=4)
