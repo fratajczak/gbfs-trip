@@ -8,6 +8,7 @@ from datetime import datetime, timezone
 import math
 import bisect
 
+
 def new_trip(start_station, end_station, started_at, ended_at):
     """Create a trip dict used for json dump"""
     trip = dict()
@@ -27,6 +28,7 @@ def new_trip(start_station, end_station, started_at, ended_at):
 
 class Station:
     """Represents a station, created from a json entry"""
+
     def __init__(self, station_json):
         self.id = station_json["station_id"]
         self.name = station_json["name"]
@@ -39,6 +41,7 @@ class Station:
 
 class Bike:
     """Represents a bike, created from a json entry"""
+
     def __init__(self, bike_json, last_seen_at):
         self.lat = bike_json["lat"]
         self.lon = bike_json["lon"]
@@ -70,7 +73,7 @@ class Bike:
             return station_list[i1]
         if d2 < 10:
             return station_list[i2]
-        station= dict()
+        station = dict()
         station["station_id"] = 0
         station["name"] = "Flex parking"
         station["lat"] = self.lat
@@ -96,6 +99,7 @@ class BikeRegistry:
     """Describes the entire context around free bikes and logs bikes
     in order to detect bikes that were moved during trips, also logs trips
     """
+
     def __init__(self, city_name, station_info_url, free_bike_status_url):
         self.city_name = city_name
         self.free_bike_status_url = free_bike_status_url
@@ -108,14 +112,14 @@ class BikeRegistry:
             stations_json = json.load(data)["data"]["stations"]
         except (IOError, json.decoder.JSONDecodeError):
             sys.exit("Could not load station info json, exiting...")
-        #can't use a hash map because bike coordinates aren't exactly equal
-        #to station coordinates, so we use a sorted array
+        # can't use a hash map because bike coordinates aren't exactly equal
+        # to station coordinates, so we use a sorted array
         self.stations = []
         for station_json in stations_json:
             self.stations.append(Station(station_json))
         self.stations.sort()
 
-    def update(self) :
+    def update(self):
         """Get free_bike_status.json then compare and update the status of
         free bikes, detect if a trip happenned and if so, log it
         Doesn't cover the edge case of a trip from one station to the same one
@@ -139,35 +143,44 @@ class BikeRegistry:
             cur_bike = Bike(bike_json, self.last_updated)
             if bike_id in self.bikes:
                 old_bike = self.bikes[bike_id]
-                #ignore trips of less than 100 seconds (moved by mistake/cancelled)
+                # ignore trips of less than 100 seconds (moved by mistake/cancelled)
                 if old_bike.away_from(cur_bike) and self.last_updated - old_bike.last_seen > 100:
                     print("New trip added")
                     start_station = old_bike.find_station(self.stations)
                     end_station = cur_bike.find_station(self.stations)
-                    self.trips.append(new_trip(start_station, end_station,
-                        old_bike.last_seen, self.last_updated))
+                    self.trips.append(
+                        new_trip(
+                            start_station,
+                            end_station,
+                            old_bike.last_seen,
+                            self.last_updated,
+                        )
+                    )
                     self.bikes[bike_id] = cur_bike
                 else:
                     self.bikes[bike_id].last_seen = self.last_updated
-                    if old_bike.has_moved(cur_bike): #update position if moved a bit
+                    if old_bike.has_moved(cur_bike):  # update position if moved a bit
                         self.bikes[bike_id] = cur_bike
             elif bike_json["is_disabled"] == 0:
                 self.bikes[bike_id] = cur_bike
 
         print("updated", self.city_name, "at", datetime.now().isoformat(sep=" "))
 
+
 if __name__ == "__main__":
-    berlin_bikes = BikeRegistry("Berlin",
-    "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bn/de/station_information.json",
-    "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bn/de/free_bike_status.json")
+    berlin_bikes = BikeRegistry(
+        "Berlin",
+        "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bn/de/station_information.json",
+        "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bn/de/free_bike_status.json",
+    )
     try:
         while True:
             berlin_bikes.update()
-            #wait until end of ttl
+            # wait until end of ttl
             now = time.time()
             if berlin_bikes.last_updated + berlin_bikes.ttl > now:
                 time.sleep(berlin_bikes.last_updated + berlin_bikes.ttl - now)
-            #wait 1 second in case of update delays or timesync issues
+            # wait 1 second in case of update delays or timesync issues
             time.sleep(1)
     except KeyboardInterrupt:
         with open("data.json", "w", encoding="utf-8") as f:
