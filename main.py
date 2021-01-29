@@ -166,6 +166,12 @@ class BikeRegistry:
 
         print("updated", self.city_name, "at", datetime.now().isoformat(sep=" "))
 
+    def export(self, filename):
+        """Write all collected trip data in json format to filename, sorts trips in place"""
+        self.trips.sort(key=lambda k: k['started_at'])
+        with open(filename, "w", encoding="utf-8") as f:
+            json.dump(self.trips, f, ensure_ascii=False, indent=4)
+
 
 if __name__ == "__main__":
     berlin_bikes = BikeRegistry(
@@ -183,6 +189,4 @@ if __name__ == "__main__":
             # wait 1 second in case of update delays or timesync issues
             time.sleep(1)
     except KeyboardInterrupt:
-        berlin_bikes.trips.sort(key=lambda k: k['started_at'])
-        with open("data.json", "w", encoding="utf-8") as f:
-            json.dump(berlin_bikes.trips, f, ensure_ascii=False, indent=4)
+        berlin_bikes.export("data.json")
